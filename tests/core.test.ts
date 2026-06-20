@@ -92,6 +92,7 @@ describe("cleanAddressRow", () => {
     f[2] = "1000"; // SVFNR
     f[3] = "01"; // BYGGD
     f[4] = "177597"; // LANDNR
+    f[5] = "1005403"; // HEINUM
     f[7] = "201"; // POSTNR
     f[8] = "Bæjarlind"; // HEITI_NF
     f[9] = "Bæjarlind"; // HEITI_TGF
@@ -105,6 +106,7 @@ describe("cleanAddressRow", () => {
   it("cleans a normal row", () => {
     expect(cleanAddressRow(row(), known)).toEqual({
       hnitnum: 10001414,
+      heinum: 1005403,
       svfnr: 1000,
       byggd: 1, // "01" → 1
       landnr: 177597,

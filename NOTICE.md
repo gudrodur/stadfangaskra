@@ -64,3 +64,6 @@ The whole approach — which columns to keep, the cleaning rules, the search and
 validation semantics — follows the design of Sveinbjörn Þórðarson's `iceaddr`.
 This package exists to make that available to TypeScript / edge runtimes; full
 credit and thanks to him for the original work.
+
+The `heinum` (address identifier, distinct from the coordinate-point `hnitnum`)
+field follows iceaddr#16 by Jökull Sólberg.

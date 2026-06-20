@@ -7,6 +7,7 @@ function addr(
 ): CleanAddress {
   return {
     hnitnum: p.hnitnum,
+    heinum: p.heinum ?? null,
     svfnr: p.svfnr ?? null,
     byggd: p.byggd ?? null,
     landnr: p.landnr ?? null,

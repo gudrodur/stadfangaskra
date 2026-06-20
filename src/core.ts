@@ -44,6 +44,7 @@ const COL = {
   SVFNR: 2,
   BYGGD: 3,
   LANDNR: 4,
+  HEINUM: 5,
   POSTNR: 7,
   HEITI_NF: 8,
   HEITI_TGF: 9,
@@ -108,7 +109,14 @@ export function parseCsvLine(line: string): string[] {
 }
 
 export interface CleanAddress {
+  /** Coordinate-point identifier (the geo point). NOT unique per address — one
+   *  address (`heinum`) can have several points. Use `heinum` to identify the
+   *  address itself. */
   hnitnum: number;
+  /** Address identifier (staðfanga-/heitinúmer) — the stable id of the address
+   *  itself, used to join with HMS and other public datasets. Distinct from the
+   *  coordinate-point `hnitnum`. */
+  heinum: number | null;
   svfnr: number | null;
   byggd: number | null;
   landnr: number | null;
@@ -167,6 +175,7 @@ export function cleanAddressRow(
 
   return {
     hnitnum,
+    heinum: intOrNull(fields[COL.HEINUM]),
     svfnr: intOrNull(fields[COL.SVFNR]),
     byggd: intOrNull(fields[COL.BYGGD]),
     landnr: intOrNull(fields[COL.LANDNR]),

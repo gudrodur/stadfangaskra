@@ -70,6 +70,11 @@ applies the same filtering iceaddr does (drop rows with no stable id or street,
 postcode outside the known set, coordinates outside Iceland; comma-decimal →
 dot; lower-case house letters).
 
+Each record carries both identifiers, mirroring iceaddr: `hnitnum` (the
+coordinate point, **not** unique per address) and `heinum` (the address itself,
+the stable id you join on). Tracking
+[iceaddr#16](https://github.com/sveinbjornt/iceaddr/pull/16) by Jökull Sólberg.
+
 ### Fetch — the registry, live from HMS (no data redistributed)
 
 ```ts
