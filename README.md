@@ -1,4 +1,4 @@
-# stadfangaskra
+# iceaddr-ts
 
 Icelandic address registry (**Staðfangaskrá**) lookup for TypeScript, Cloudflare
 Workers and Node — a **zero-dependency, edge-native** port of the data layer of
@@ -20,7 +20,7 @@ export and you keep it wherever you like (memory, KV, Postgres).
 ## Install
 
 ```sh
-npm install stadfangaskra      # or: pnpm add stadfangaskra
+npm install iceaddr-ts      # or: pnpm add iceaddr-ts
 ```
 
 ESM and CommonJS builds are both shipped. Node 18+ (for `fetch` / Web Streams)
@@ -29,7 +29,7 @@ or any modern edge runtime.
 ## Quick start
 
 ```ts
-import { loadStadfangaskra, createAddressIndex } from "stadfangaskra";
+import { loadStadfangaskra, createAddressIndex } from "iceaddr-ts";
 
 // 1. Fetch + clean the registry straight from HMS (~139k records, no data is
 //    bundled in this package). Do this at startup, or on a schedule.
@@ -58,7 +58,7 @@ The library has four layers; import only what you need.
 ### Core — pure CSV parsing & cleaning (zero data)
 
 ```ts
-import { parseCsvLine, cleanAddressRow, validateHeader, parseAddressQuery } from "stadfangaskra";
+import { parseCsvLine, cleanAddressRow, validateHeader, parseAddressQuery } from "iceaddr-ts";
 
 parseAddressQuery("Njálsgata 8C");
 //=> { street: "Njálsgata", number: 8, letter: "c" }
@@ -78,7 +78,7 @@ the stable id you join on). Tracking
 ### Fetch — the registry, live from HMS (no data redistributed)
 
 ```ts
-import { streamStadfangaskra, loadStadfangaskra, STADFANGASKRA_URL } from "stadfangaskra";
+import { streamStadfangaskra, loadStadfangaskra, STADFANGASKRA_URL } from "iceaddr-ts";
 
 // Stream record-by-record (constant memory) ...
 for await (const a of streamStadfangaskra()) { /* ... */ }
@@ -105,7 +105,7 @@ ideal for scripts, edge functions with the dataset in memory/KV, and tests.
 ### Postcodes — the one bundled dataset
 
 ```ts
-import { POSTCODES, postcodeLookup, knownPostcodes } from "stadfangaskra/postcodes";
+import { POSTCODES, postcodeLookup, knownPostcodes } from "iceaddr-ts/postcodes";
 
 postcodeLookup("101");
 //=> { code: "101", nominative: "Reykjavík", dative: "Reykjavík",
@@ -113,7 +113,7 @@ postcodeLookup("101");
 ```
 
 195 postcodes with nominative + dative place names and region info, ported from
-iceaddr. Importing from `stadfangaskra/postcodes` keeps it separate from the
+iceaddr. Importing from `iceaddr-ts/postcodes` keeps it separate from the
 data-free core.
 
 ## A note on the data

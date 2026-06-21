@@ -1,17 +1,18 @@
 # Publishing to npm
 
-**Held intentionally.** The GitHub repo is public, but the npm package is **not
-published yet** — we want to give Sveinbjörn Þórðarson (author of `iceaddr`) a
-heads-up first as a courtesy (see `docs/outreach-sveinbjorn.md`). Publish once
-he's had a chance to respond.
+**Status (2026-06-21):** Sveinbjörn Þórðarson (author of `iceaddr`) has replied
+and given his blessing to publish, with no attribution required beyond the BSD-3
+notice already kept for the postcode data (see `docs/outreach-sveinbjorn.md`). The
+package is named `iceaddr-ts` to make the lineage clear. Not on npm yet — ready to
+publish when you give the word.
 
-## Checklist (run after the Sveinbjörn heads-up)
+## Checklist
 
 1. Confirm the name is free:
    ```sh
-   npm view stadfangaskra
+   npm view iceaddr-ts
    ```
-   If taken, fall back to a scoped name (`@gudrodur/stadfangaskra`) and update
+   If taken, fall back to a scoped name (`@gudrodur/iceaddr-ts`) and update
    `name` in `package.json`.
 2. Log in: `npm login`.
 3. Verify the build + tests are green:

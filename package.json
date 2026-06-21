@@ -1,5 +1,5 @@
 {
-  "name": "stadfangaskra",
+  "name": "iceaddr-ts",
   "version": "0.1.0",
   "description": "Icelandic address registry (Staðfangaskrá) lookup for TypeScript, Cloudflare Workers and Node — a zero-dependency, edge-native port of the data layer of Sveinbjörn Þórðarson's iceaddr.",
   "type": "module",
@@ -19,11 +19,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gudrodur/stadfangaskra.git"
+    "url": "git+https://github.com/gudrodur/iceaddr-ts.git"
   },
-  "homepage": "https://github.com/gudrodur/stadfangaskra#readme",
+  "homepage": "https://github.com/gudrodur/iceaddr-ts#readme",
   "bugs": {
-    "url": "https://github.com/gudrodur/stadfangaskra/issues"
+    "url": "https://github.com/gudrodur/iceaddr-ts/issues"
   },
   "sideEffects": false,
   "engines": {

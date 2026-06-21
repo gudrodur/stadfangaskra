@@ -1,6 +1,6 @@
 # Notices & attributions
 
-This package (`stadfangaskra`) is MIT-licensed (see `LICENSE`). It is an
+This package (`iceaddr-ts`) is MIT-licensed (see `LICENSE`). It is an
 independent TypeScript reimplementation, not a copy, but it stands on two
 external sources that carry their own terms.
 
